@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">Wizz</div>
+        <h2>Royal Entrance</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <i class="fas fa-user-circle"></i>
+                <input type="text" id="username" placeholder="Your Royal Name" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-key"></i>
+                <input type="password" id="password" placeholder="password" required>
+            </div>
+            <button type="submit">Log in </button>
+        </form>
+    </div>
+
+    <div class="character" id="character"></div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                // Simulate login success with royal flair
+                const character = document.getElementById('character');
+                character.style.display = 'block';
+                setTimeout(() => {
+                    character.style.display = 'none';
+                    alert('Welcome to the Realm, noble ' + username + '! Your magic awaits.');
+                }, 4000);
+            } else {
+                alert('Please provide your royal credentials.');
+            }
+        });
+    </script>
+</body>
+</html>
